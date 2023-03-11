@@ -17,6 +17,7 @@ Finaly it derives aerobic threshold heart rate using a simple linear model to es
 ![](DHA_alpha1_HR.png)
 
 *Notes:*
+
 *The estimated aerobic threshold value for the current time period is within 1 bpm of the LT1 value that was confirmed through a lab test.*
 *The dataset .csv file can be downloaded from here: https://www.dropbox.com/s/1m22w99znl2rlb3/ACR_HRV_Data_3.csv?dl=0*
 
