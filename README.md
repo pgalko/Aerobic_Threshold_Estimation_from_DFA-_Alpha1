@@ -16,6 +16,9 @@ Finaly it derives aerobic threshold heart rate using a simple linear model to es
 *Scatter Plot Predicted Aerobic Threshold HR:*
 ![](DHA_alpha1_HR.png)
 
+![](Run_DHA_alpha1_HR.png)
+![](Cycle_DHA_alpha1_HR.png)
+
 *Notes:*
 
 * The estimated aerobic threshold value for the current time period is within 1 bpm of the LT1 value that was confirmed through a lab test.
