@@ -84,13 +84,21 @@ def computeFeatures(df):
 # Read the data
 df = pd.read_csv('ACR_HRV_Data_3.csv')# Data from 2021/01/01 till present
 
+# type of activities to be used for analisys (running, cycling, all.)
+sport = 'cycling'
+
+if sport=='cycling':
+    df = df.loc[df['sport'] == 'cycling']
+    plot_title = 'Aerobic threshold heartrate derived from DFA alpha1 (cycling)'
+elif sport=='running':
+    df = df.loc[df['sport'] == 'running']
+    plot_title = 'Aerobic threshold heartrate derived from DFA alpha1 (running)'
+else :
+    df = df
+    plot_title = 'Aerobic threshold heartrate derived from DFA alpha1'
+
 # create an array of all unique gc_activity_id values
 gc_activity_id_list = df['gc_activity_id'].unique()
-
-# find activity_id 7138066139 (start of keto diet) in the list and print index
-keto_start_index = int(np.where(gc_activity_id_list == 7138066139)[0])
-# find activity_id 8604626257 (end of keto diet) in the list and print index
-keto_end_index = int(np.where(gc_activity_id_list == 8604626257)[0])
 
 results = []
 
@@ -146,14 +154,10 @@ plt.colorbar()
 z = np.polyfit(range(len(results)), results, 3)
 p = np.poly1d(z)
 plt.plot(range(len(results)), p(range(len(results))), "r--")
-#plot span of keto diet
-plt.axvspan(keto_start_index, keto_end_index, alpha=0.1, color='grey')
-#add text to span
-plt.text(keto_start_index, 110, 'Keto diet', alpha=0.3, color='grey',rotation=90)
 #labels
 plt.xlabel('Activity')
 plt.ylabel('Predicted aerobic threshold heartrate')
 #title
-plt.title('Aerobic threshold heartrate derived from DFA alpha1')
+plt.title(plot_title)
 plt.show()
 
