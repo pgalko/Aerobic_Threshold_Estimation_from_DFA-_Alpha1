@@ -13,10 +13,11 @@ The main part of the code reads a CSV file containing heart rate variability dat
 
 Finaly it derives aerobic threshold heart rate using a simple linear model to estimate heart rate given alpha 1, The results are then ploted using matplotlib library.
 
-*Scatter Plot Predicted Aerobic Threshold HR:*
+*Scatter Plot Predicted Aerobic Threshold HR (All):*
 ![](DHA_alpha1_HR.png)
 
-![](Run_DHA_alpha1_HR.png)
+*Scatter Plot Predicted Aerobic Threshold HR (Run,Cycle):*
+![](Run_DHA_alpha1_HR.png) 
 ![](Cycle_DHA_alpha1_HR.png)
 
 *Notes:*
